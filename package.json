@@ -1,6 +1,6 @@
 {
   "name": "@chickenjdk/build",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Build node.js packages into both commonjs and esm, preserving instanceof. Uses esbuild and babel under the hood.",
   "exports": {
     ".": {
