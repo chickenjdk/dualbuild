@@ -1,6 +1,6 @@
 # .github/workflows/deploy.yml
 
-name: Deploy
+name: Build development release
 
 on:
   workflow_dispatch:
