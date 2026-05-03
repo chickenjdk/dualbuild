@@ -37,7 +37,6 @@ export function buildIndividual(
     outExtension = Object.fromEntries(
       allExtensions.map((fromExt) => [fromExt, fileExtension]),
     );
-    console.log(outExtension);
     usingPlugins.push(
       corePlugins.importRewrite.importRewritePlugin({
         mappings: outExtension,
