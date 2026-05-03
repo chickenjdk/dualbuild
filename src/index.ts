@@ -2,11 +2,6 @@ import { build, type Plugin } from "esbuild";
 import { readDirAll } from "./utils/fs.js";
 import * as transformPlugin from "./transformPlugin.js";
 import * as corePlugins from "./plugins/index.js";
-// @ts-ignore
-import mergeMaps from "merge-source-map";
-import { writeFileSync } from "node:fs";
-import { mkdir, writeFile } from "node:fs/promises";
-import { dirname } from "node:path";
 
 export * as transformPlugin from "./transformPlugin.js";
 export * as corePlugins from "./plugins/index.js";
