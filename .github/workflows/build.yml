@@ -1,0 +1,27 @@
+# .github/workflows/build.yml
+
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g. v1.2.3)'
+        required: true
+
+permissions:
+  contents: write
+  packages: write
+  id-token: write
+
+jobs:
+  deploy:
+    uses: chickenjdk/github-actions-workflows/.github/workflows/deploy-docs-and-publish.yml@main
+    with:
+      node-version: '24'
+      registry-url: 'https://registry.npmjs.org/'
+      docs-dir: './docs'
+      docs-base-url: 'https://chickenjdk.github.io/dualbuild'
+      version: ${{ inputs['version'] }}
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

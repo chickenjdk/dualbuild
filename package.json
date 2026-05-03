@@ -1,0 +1,49 @@
+{
+  "name": "@chickenjdk/build",
+  "version": "1.0.0",
+  "description": "Build node.js packages into both commonjs and esm, preserving instanceof. Uses esbuild and babel under the hood.",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs"
+    },
+    "./dist/*.js": {
+      "import": "./dist/esm/*.mjs",
+      "require": "./dist/cjs/*.cjs"
+    }
+  },
+  "keywords": [
+    "Build"
+  ],
+  "homepage": "https://github.com/chickenjdk/dualbuild#readme",
+  "bugs": {
+    "url": "https://github.com/chickenjdk/dualbuild/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chickenjdk/dualbuild.git"
+  },
+  "license": "MIT",
+  "author": "coolchickenguy",
+  "type": "module",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc; node ./bootstrap/index.js",
+    "docs": "typedoc --options typedoc.json"
+  },
+  "devDependencies": {
+    "@types/babel__generator": "^7.27.0",
+    "@types/babel__traverse": "^7.28.0",
+    "@types/node": "^25.6.0",
+    "rimraf": "^6.1.3",
+    "typedoc": "^0.28.19",
+    "typescript": "^6.0.3"
+  },
+  "peerDependencies": {
+    "@babel/generator": "^7.29.1",
+    "@babel/parser": "^7.29.3",
+    "@babel/traverse": "^7.29.0",
+    "esbuild": "^0.28.0"
+  }
+}
