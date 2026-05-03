@@ -1,0 +1,10 @@
+# Repository directories
+.github/
+bootstrap/
+src/
+typedoc.json
+tsconfig.json
+# Directories or files that may be created
+node_modules/
+docs/
+*tgz
